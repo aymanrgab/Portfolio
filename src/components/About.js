@@ -16,7 +16,7 @@ const About = () => (
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.5 }}
     >
-      I'm a passionate data scientist with expertise in machine learning, statistical analysis, and data visualization. I specialize in developing innovative solutions to complex data problems and turning insights into actionable strategies.
+      I'm Ayman Farhan, a data scientist passionate about turning complex data into actionable insights. My mission is to develop innovative solutions that drive business success. I specialize in machine learning, statistical analysis, and data visualization.
     </motion.p>
     <motion.div 
       className="cta-buttons"

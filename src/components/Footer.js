@@ -11,6 +11,7 @@ function Footer() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
+      style={{ textAlign: 'center' }}
     >
       <section id="contact">
         <h2><i className="fas fa-envelope"></i> Contact</h2>
@@ -54,7 +55,7 @@ function Footer() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        &copy; 2024 Ayman Farhan. All rights reserved.
+        © 2024 Ayman Farhan. All rights reserved.
       </motion.p>
     </motion.footer>
   );

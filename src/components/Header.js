@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from 'react-router-hash-link';
+import { motion } from "framer-motion";
 
 const Header = ({ theme, toggleTheme }) => {
   const [isSticky, setIsSticky] = useState(false);
@@ -18,13 +19,18 @@ const Header = ({ theme, toggleTheme }) => {
 
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80; // Adjust this value based on your header height
+    const yOffset = -80;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
   }
 
   return (
     <header className={`${theme} ${isSticky ? 'sticky' : ''}`}>
-      <div className="header-content">
+      <motion.div 
+        className="header-content"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1>Ayman Farhan</h1>
         <p>Data Scientist | Machine Learning Engineer</p>
         <nav>
@@ -33,10 +39,10 @@ const Header = ({ theme, toggleTheme }) => {
           <HashLink smooth to="#projects" scroll={scrollWithOffset}>Projects</HashLink>
           <HashLink smooth to="#contact" scroll={scrollWithOffset}>Contact</HashLink>
         </nav>
-      </div>
-      <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
-        {theme === "light" ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
-      </button>
+        <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+          {theme === "light" ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
+        </button>
+      </motion.div>
     </header>
   );
 };
